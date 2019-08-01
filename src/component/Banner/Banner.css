@@ -1,0 +1,37 @@
+.Banner {
+  height: 50vh;
+  width: 100%;
+  margin: auto;
+  color: green;
+  position: relative;
+  font-size: 2em;
+}
+
+.Banner img {
+  width: 100%;
+  opacity: 1;
+  height: 100%;
+}
+
+.BannerText {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.Banner h1 {
+  margin: 0;
+  padding: 0;
+}
+
+.Banner hr {
+  width: 80%;
+  border: none;
+  height: 5px;
+  color: black;
+  background-color: green;
+  padding: none;
+  margin: none;
+}
