@@ -1,5 +1,4 @@
 .search {
-  border-radius: 0 0.5rem 0.5rem 0;
   border: 2px solid rgb(4, 71, 9);
   padding: 5px;
   width: 200px;
@@ -11,4 +10,23 @@
   border: 2px solid rgb(4, 71, 9);
   width: 60px;
   height: 29px;
+}
+
+.sButton {
+  color: black;
+  background-color: lightgreen;
+  border: none;
+  padding: 6.9px 25px;
+  text-align: center;
+  display: inline-block;
+  font-size: 13.2;
+  border-radius: 0 0.5rem 0.5rem 0;
+  text-decoration: none;
+  transition: 0.3s;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.sButton:hover {
+  opacity: 1;
 }

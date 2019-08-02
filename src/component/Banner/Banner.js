@@ -9,8 +9,9 @@ const banner = props => (
     <img src={testImg} alt="banner" />
     <div className="BannerText">
       <h1>TFT RANK</h1>
+      <h2>{props.user}</h2>
       <hr />
-      <SearchSummoner />
+      <SearchSummoner onChange={props.onChange} state={props.state} />
     </div>
   </div>
 );
