@@ -19,11 +19,24 @@ class Home extends Component {
     testApi.testOne(
       this.state.user,
       resp => {
-        console.log(resp);
+        testApi.testTwo(resp.data.id, this.onSuccess, error =>
+          console.log(error)
+        );
       },
       error => console.error(error)
     );
   };
+
+  onSuccess = resp => {
+    for (let i = 0; i < resp.data.length; i++) {
+      if (resp.data[i].queueType !== "RANKED_TFT") {
+        console.log("no");
+      } else {
+        console.log(resp);
+      }
+    }
+  };
+
   render() {
     return (
       <>

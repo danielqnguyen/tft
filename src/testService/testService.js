@@ -1,20 +1,22 @@
 import axios from "axios";
 
 class testApi {
-  static testOne(user) {
+  static testOne(user, onSuccess, onError) {
     axios
       .get(
-        `https://cors-anywhere.herokuapp.com/https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${user}?api_key=`
+        `https://cors-anywhere.herokuapp.com/https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${user}?`
       )
-      .then(resp => testApi.testTwo(resp.data.id));
+      .then(onSuccess)
+      .catch(onError);
   }
 
-  static testTwo(id) {
+  static testTwo(id, onSuccess, onError) {
     axios
       .get(
-        `https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/${id}?api_key=`
+        `https://cors-anywhere.herokuapp.com/https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/${id}?`
       )
-      .then(resp => console.log(resp));
+      .then(onSuccess)
+      .catch(onError);
   }
 }
 
