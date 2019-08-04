@@ -1,37 +1,37 @@
 .Banner {
-  height: 50vh;
-  width: 100%;
-  margin: auto;
-  color: green;
   position: relative;
-  font-size: 2em;
-}
-
-.Banner img {
+  height: 754px;
+  min-height: 500px;
   width: 100%;
-  opacity: 1;
-  height: 100%;
+  background: #161415 url(..\assests\images\tftpengu.jpg) no-repeat top center;
+  background-size: cover !important;
+  -webkit-background-size: cover !important;
+  text-align: center;
+  overflow: hidden;
 }
 
 .BannerText {
   position: absolute;
-  top: 55%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
 }
 
+.BannerText {
+  color: #fff;
+  letter-spacing: -2px;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
 .Banner h1 {
   margin: 0;
   padding: 0;
+  font-size: 5em;
 }
 
-.Banner hr {
-  width: 80%;
-  border: none;
-  height: 5px;
-  color: black;
-  background-color: green;
-  padding: none;
-  margin: none;
+@media only screen and (max-width: 480px) {
+  .Banner h1 {
+    font-size: 2em;
+  }
 }

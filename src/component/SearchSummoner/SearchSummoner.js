@@ -19,11 +19,7 @@ const SearchSummoner = props => (
       onChange={props.onChange}
       user={props.state.user}
     />
-    <button
-      type="button"
-      className="sButton"
-      onClick={() => console.log(props.state)}
-    >
+    <button type="button" className="sButton" onClick={props.onClick}>
       Search
     </button>
   </>
