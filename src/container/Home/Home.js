@@ -16,15 +16,19 @@ class Home extends Component {
   };
 
   onClick = () => {
-    testApi.testOne(
-      this.state.user,
-      resp => {
-        testApi.testTwo(resp.data.id, this.onSuccess, error =>
-          console.log(error)
-        );
-      },
-      error => console.error(error)
-    );
+    if (!this.state.user) {
+      alert("please enter a username");
+    } else {
+      testApi.testOne(
+        this.state.user,
+        resp => {
+          testApi.testTwo(resp.data.id, this.onSuccess, error =>
+            console.log(error)
+          );
+        },
+        error => console.error(error)
+      );
+    }
   };
 
   onSuccess = resp => {
@@ -32,7 +36,17 @@ class Home extends Component {
       if (resp.data[i].queueType !== "RANKED_TFT") {
         console.log("no");
       } else {
-        console.log(resp);
+        let data = resp.data[i];
+        console.log(resp.data[i]);
+        this.props.history.push({
+          pathname: "/test",
+          sN: data.summonerName,
+          tier: data.tier,
+          rank: data.rank,
+          points: data.leaguePoints,
+          wins: data.wins,
+          losses: data.losses
+        });
       }
     }
   };

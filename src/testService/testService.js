@@ -4,7 +4,7 @@ class testApi {
   static testOne(user, onSuccess, onError) {
     axios
       .get(
-        `https://cors-anywhere.herokuapp.com/https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${user}?`
+        `https://cors-anywhere.herokuapp.com/https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${user}?api_key=`
       )
       .then(onSuccess)
       .catch(onError);
@@ -13,7 +13,7 @@ class testApi {
   static testTwo(id, onSuccess, onError) {
     axios
       .get(
-        `https://cors-anywhere.herokuapp.com/https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/${id}?`
+        `https://cors-anywhere.herokuapp.com/https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/${id}?api_key=`
       )
       .then(onSuccess)
       .catch(onError);
