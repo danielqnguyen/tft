@@ -19,6 +19,9 @@ class Home extends Component {
     if (!this.state.user) {
       alert("please enter a username");
     } else {
+      if (!this.state.region) {
+        this.setState({ region: "NA1" });
+      }
       testApi.testOne(
         this.state.user,
         resp => {
@@ -39,13 +42,15 @@ class Home extends Component {
         let data = resp.data[i];
         console.log(resp.data[i]);
         this.props.history.push({
-          pathname: "/test",
+          pathname: "/profile/" + this.state.region + "/" + data.summonerName,
           sN: data.summonerName,
           tier: data.tier,
           rank: data.rank,
           points: data.leaguePoints,
           wins: data.wins,
           losses: data.losses
+          //can probably remove setting data here and allow the params on the next page handle
+          //data
         });
       }
     }

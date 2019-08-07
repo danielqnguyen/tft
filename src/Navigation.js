@@ -7,7 +7,7 @@ const Navigation = () => {
   return (
     <>
       <Route exact path="/" component={Home} />
-      <Route exact path="/test" component={Display} />
+      <Route exact path="/profile/:region/:user" component={Display} />
     </>
   );
 };

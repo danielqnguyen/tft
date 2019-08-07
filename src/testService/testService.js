@@ -1,6 +1,7 @@
 import axios from "axios";
 
 class testApi {
+  //will eventually add in other regions just doing na currently for simplicity reason
   static testOne(user, onSuccess, onError) {
     axios
       .get(
